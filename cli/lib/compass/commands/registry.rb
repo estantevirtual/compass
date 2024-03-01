@@ -26,7 +26,7 @@ module Compass::Commands
       re = /^#{Regexp.escape(name)}/
       @commands.keys.detect{|k| k.to_s =~ re}
     end
-    def command_exists?(name)
+    def command_exist?(name)
       @commands ||= Hash.new
       name && (@commands.has_key?(name.to_sym) || abbreviation?(name))
     end

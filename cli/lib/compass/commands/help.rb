@@ -70,11 +70,11 @@ To get help on a particular command please specify the command.
       end
 
       def execute
-        if Compass::Commands.command_exists? options[:help_command]
+        if Compass::Commands.command_exist? options[:help_command]
           $command = options[:help_command]
           puts Compass::Commands[options[:help_command]].usage
           $command = "help"
-        elsif Compass::Frameworks.template_exists? options[:help_command]
+        elsif Compass::Frameworks.template_exist? options[:help_command]
           puts Compass::Frameworks.template_usage(options[:help_command])
         else
           raise OptionParser::ParseError, "No such command: #{options[:help_command]}"
